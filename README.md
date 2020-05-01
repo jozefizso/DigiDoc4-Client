@@ -103,7 +103,7 @@
 
         mkdir build
         cd build
-        cmake -G"NMAKE Makefiles" -DQt5_DIR="C:\Qt\5.9\msvc2015\lib\cmake\Qt5" ..
+        cmake -G"NMake Makefiles" -DQt5_DIR="C:\Qt\5.9\msvc2015\lib\cmake\Qt5" ..
 
 4. Build
 
