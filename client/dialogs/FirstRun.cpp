@@ -53,23 +53,32 @@ FirstRun::FirstRun(QWidget *parent) :
 	ui->langLabel->setFont(regular12);
 
 	ui->lang->setFont(Styles::font(Styles::Regular, 18));
-	ui->lang->addItem(QStringLiteral("Eesti keel"));
+	//ui->lang->addItem(QStringLiteral("Eesti keel"));
+	//ui->lang->addItem(QStringLiteral("English"));
+	//ui->lang->addItem("Русский язык"); //QStringLiteral breaks windows text
+	ui->lang->addItem("Slovenčina");
 	ui->lang->addItem(QStringLiteral("English"));
-	ui->lang->addItem("Русский язык"); //QStringLiteral breaks windows text
+
+	//if(Common::language() == QStringLiteral("en"))
+	//	ui->lang->setCurrentIndex(1);
+	//else if(Common::language() == QStringLiteral("ru"))
+	//	ui->lang->setCurrentIndex(2);
+	//else
+	//	ui->lang->setCurrentIndex(0);
 
 	if(Common::language() == QStringLiteral("en"))
 		ui->lang->setCurrentIndex(1);
-	else if(Common::language() == QStringLiteral("ru"))
-		ui->lang->setCurrentIndex(2);
 	else
 		ui->lang->setCurrentIndex(0);
 
 	connect( ui->lang, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this](int index) {
 		switch(index)
 		{
-		case 1: emit langChanged(QStringLiteral("en")); break;
+		/*case 1: emit langChanged(QStringLiteral("en")); break;
 		case 2: emit langChanged(QStringLiteral("ru")); break;
-		default: emit langChanged(QStringLiteral("et")); break;
+		default: emit langChanged(QStringLiteral("et")); break;*/
+		case 1: emit langChanged(QStringLiteral("en")); break;
+		default: emit langChanged(QStringLiteral("sk")); break;
 		}
 		ui->retranslateUi(this);
 		loadImages();
@@ -77,7 +86,7 @@ FirstRun::FirstRun(QWidget *parent) :
 	ui->continueBtn->setFont(buttonFont);
 	connect(ui->continueBtn, &QPushButton::clicked, this, [this]{ui->stack->setCurrentIndex(Intro);});
 
-	QSvgWidget* coatOfArs = new QSvgWidget(QStringLiteral(":/images/Logo_Suur.svg"), ui->coatOfArms);
+	QSvgWidget* coatOfArs = new QSvgWidget(QStringLiteral(":/images/Logo_sk_vicepremier.svg"), ui->coatOfArms);
 	coatOfArs->show();
 	ui->leaves->load(QStringLiteral(":/images/vapilehed.svg"));
 	ui->structureFunds->load(QStringLiteral(":/images/Struktuurifondid.svg"));

@@ -92,6 +92,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 	ui->rdGeneralEstonian->setFont(regularFont);
 	ui->rdGeneralRussian->setFont(regularFont);
 	ui->rdGeneralEnglish->setFont(regularFont);
+	ui->rdGeneralSlovak->setFont(regularFont);
 
 	ui->rdGeneralSameDirectory->setFont(regularFont);
 	ui->rdGeneralSpecifyDirectory->setFont(regularFont);
@@ -288,6 +289,7 @@ void SettingsDialog::initFunctionality()
 	connect( ui->rdGeneralEstonian, &QRadioButton::toggled, this, [this](bool checked) { if(checked) retranslate(QStringLiteral("et")); } );
 	connect( ui->rdGeneralEnglish, &QRadioButton::toggled, this, [this](bool checked) { if(checked) retranslate(QStringLiteral("en")); } );
 	connect( ui->rdGeneralRussian, &QRadioButton::toggled, this, [this](bool checked) { if(checked) retranslate(QStringLiteral("ru")); } );
+	connect( ui->rdGeneralSlovak, &QRadioButton::toggled, this, [this](bool checked) { if(checked) retranslate(QStringLiteral("sk")); } );
 
 	ui->chkGeneralTslRefresh->setChecked(qApp->confValue(Application::TSLOnlineDigest).toBool());
 	connect(ui->chkGeneralTslRefresh, &QCheckBox::toggled, [](bool checked) {
@@ -428,6 +430,8 @@ void SettingsDialog::selectLanguage()
 		ui->rdGeneralEnglish->setChecked(true);
 	else if(Common::language() == QStringLiteral("ru"))
 		ui->rdGeneralRussian->setChecked(true);
+	else if (Common::language() == QStringLiteral("sk"))
+		ui->rdGeneralSlovak->setChecked(true);
 	else
 		ui->rdGeneralEstonian->setChecked(true);
 }

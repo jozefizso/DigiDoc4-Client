@@ -185,21 +185,24 @@ QPushButton:disabled {
        <property name="styleSheet">
         <string notr="true">border: none;</string>
        </property>
-      </widget>
-      <widget class="QWidget" name="coatOfArms" native="true">
-       <property name="geometry">
-        <rect>
-         <x>440</x>
-         <y>40</y>
-         <width>144</width>
-         <height>133</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border: none;</string>
-       </property>
+       <widget class="QWidget" name="coatOfArms" native="true">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>40</y>
+          <width>218</width>
+          <height>57</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QLabel" name="title">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="geometry">
         <rect>
          <x>470</x>

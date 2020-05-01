@@ -346,6 +346,16 @@ QRadioButton::indicator::checked {
            </attribute>
           </widget>
          </item>
+          <item>
+            <widget class="QRadioButton" name="rdGeneralSlovak">
+              <property name="text">
+                <string notr="true">Slovak</string>
+              </property>
+              <attribute name="buttonGroup">
+                <string notr="true">langGroup</string>
+              </attribute>
+            </widget>
+          </item>
          <item>
           <spacer name="languageBoxSpacer">
            <property name="orientation">

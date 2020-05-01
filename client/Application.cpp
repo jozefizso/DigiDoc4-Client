@@ -590,6 +590,7 @@ void Application::loadTranslation( const QString &lang )
 
 	if(lang == QStringLiteral("en")) QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedKingdom));
 	else if(lang == QStringLiteral("ru")) QLocale::setDefault(QLocale( QLocale::Russian, QLocale::RussianFederation));
+	else if(lang == QStringLiteral("sk")) QLocale::setDefault(QLocale( QLocale::Slovak, QLocale::Slovakia));
 	else QLocale::setDefault(QLocale(QLocale::Estonian, QLocale::Estonia));
 
 	d->appTranslator.load( ":/translations/" + lang );
