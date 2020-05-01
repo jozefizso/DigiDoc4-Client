@@ -93,6 +93,7 @@
     * [Visual Studio Community 2015](https://www.visualstudio.com/downloads/)
     * [http://www.cmake.org](http://www.cmake.org)
     * [http://qt-project.org](http://qt-project.org)
+    * [OpenSSL](https://www.openssl.org)
     * [libdigidocpp-*.msi](https://github.com/open-eid/libdigidocpp/releases)
 2. Fetch the source
 
@@ -103,7 +104,7 @@
 
         mkdir build
         cd build
-        cmake -G"NMake Makefiles" -DQt5_DIR="C:\Qt\5.9\msvc2015\lib\cmake\Qt5" ..
+        cmake -G"NMake Makefiles" -DQt5_DIR="C:\Qt\5.9\msvc2015\lib\cmake\Qt5" -DOPENSSL_ROOT_DIR="C:\Program Files (x86)\OpenSSL" ..
 
 4. Build
 
