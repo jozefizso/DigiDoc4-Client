@@ -15,10 +15,15 @@ install:
     git submodule -q update --init --recursive
 
     $apiUrl = 'https://ci.appveyor.com/api'
+
     $project = Invoke-RestMethod -Method Get -Uri "$apiUrl/projects/open-eid/libdigidocpp/branch/master"
+
     $jobId = $project.build.jobs[$env:LIBDIGIDOCPP_BUILD].jobId
+
     $artifacts = Invoke-RestMethod -Method Get -Uri "$apiUrl/buildjobs/$jobId/artifacts"
+
     Invoke-RestMethod -Method Get -Uri "$apiUrl/buildjobs/$jobId/artifacts/$($artifacts[0].fileName)" -OutFile "libdigidocpp.msi"
+
     & msiexec /qn /a libdigidocpp.msi "TARGETDIR=$($pwd.Path)\libs"
 build_script:
 - ps: >-
