@@ -1,9 +1,9 @@
 [submodule "cmake"]
 	path = cmake
-	url = ../cmake
+	url = https://github.com/open-eid/cmake.git
 [submodule "common"]
 	path = common
-	url = ../qt-common
+	url = https://github.com/open-eid/qt-common.git
 [submodule "extensions"]
 	path = extensions
-	url = ../digidoc-extensions
+	url = https://github.com/open-eid/digidoc-extensions.git
